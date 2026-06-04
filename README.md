@@ -35,4 +35,9 @@ This public package intentionally excludes private outreach records, individual 
 
 ## License
 
-Copyright (c) 2026 Omar Galamli. All rights reserved. This repository is shared publicly for review, education, and portfolio purposes only.
+Copyright (c) 2026 Omar Galamli. All rights reserved.
+
+This repository is shared publicly for review, education, and portfolio purposes.
+No permission is granted to copy, modify, redistribute, commercialize, or use the
+technical concept, designs, documentation, models, or related materials without
+written permission from the copyright holder.
