@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONTAINER Digital Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="viewport-panel" aria-label="CONTAINER visual prototype">
+      <div class="viewport-header">
+        <div>
+          <p class="eyebrow">CONTAINER v1</p>
+          <h1>Regolith-Ballasted Lunar Construction Cell</h1>
+        </div>
+        <div class="mode-strip" role="group" aria-label="Operating phase">
+          <button class="phase-button is-active" data-phase="deploy" title="Deploy">
+            <span class="button-icon">D</span><span>Deploy</span>
+          </button>
+          <button class="phase-button" data-phase="fill" title="Fill">
+            <span class="button-icon">F</span><span>Fill</span>
+          </button>
+          <button class="phase-button" data-phase="anchor" title="Anchor">
+            <span class="button-icon">A</span><span>Anchor</span>
+          </button>
+          <button class="phase-button" data-phase="construct" title="Construct">
+            <span class="button-icon">C</span><span>Construct</span>
+          </button>
+          <button class="phase-button" data-phase="berm" title="Berm">
+            <span class="button-icon">B</span><span>Berm</span>
+          </button>
+          <button class="phase-button" data-phase="relocate" title="Relocate">
+            <span class="button-icon">R</span><span>Relocate</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="scene-wrap">
+        <canvas id="prototypeCanvas" width="1400" height="900" aria-label="Interactive lunar construction visualization"></canvas>
+        <div class="scene-overlay">
+          <div class="phase-readout">
+            <span id="phaseLabel">Deploy and survey</span>
+            <strong id="phaseValue">00</strong>
+          </div>
+          <div class="legend">
+            <span><i class="legend-pad"></i> Sintered pad</span>
+            <span><i class="legend-berm"></i> Berm</span>
+            <span><i class="legend-container"></i> Platform</span>
+            <span><i class="legend-anchor"></i> Anchors</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Engineering controls and model outputs">
+      <section class="panel-section">
+        <div class="section-head">
+          <p class="eyebrow">Assumptions</p>
+          <h2>Model Controls</h2>
+        </div>
+
+        <label class="control-row">
+          <span>Fill rate</span>
+          <output id="fillRateOut">3.0 kg/s</output>
+          <input id="fillRate" type="range" min="1" max="5" value="3" step="0.1">
+        </label>
+
+        <label class="control-row">
+          <span>Ballast mass</span>
+          <output id="ballastOut">110,000 kg</output>
+          <input id="ballastMass" type="range" min="60000" max="130000" value="110000" step="1000">
+        </label>
+
+        <label class="control-row">
+          <span>Tile energy</span>
+          <output id="tileEnergyOut">8.0 kWh</output>
+          <input id="tileEnergy" type="range" min="4" max="20" value="8" step="0.5">
+        </label>
+
+        <label class="control-row">
+          <span>Battery</span>
+          <output id="batteryOut">30 kWh</output>
+          <input id="battery" type="range" min="20" max="140" value="30" step="5">
+        </label>
+
+        <label class="control-row">
+          <span>Survival load</span>
+          <output id="survivalOut">1.0 kW</output>
+          <input id="survivalLoad" type="range" min="0.2" max="2" value="1" step="0.1">
+        </label>
+
+        <label class="toggle-row">
+          <span>40 kW FSP support</span>
+          <input id="fspToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="panel-section">
+        <div class="section-head">
+          <p class="eyebrow">Live outputs</p>
+          <h2>Readiness Snapshot</h2>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric"><span>Fill time</span><strong id="fillTime">10.2 h</strong></div>
+          <div class="metric"><span>Stability SF</span><strong id="safetyFactor">1.98</strong></div>
+          <div class="metric"><span>Tile energy</span><strong id="totalTileEnergy">1,232 kWh</strong></div>
+          <div class="metric"><span>Daily balance</span><strong id="energyBalance">+748 kWh</strong></div>
+          <div class="metric"><span>Battery survival</span><strong id="batterySurvival">30 h</strong></div>
+          <div class="metric"><span>Schedule</span><strong id="schedule">50 d</strong></div>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <div class="section-head">
+          <p class="eyebrow">Status</p>
+          <h2>Risk Flags</h2>
+        </div>
+        <ul class="risk-list" id="riskList"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="prototype.js"></script>
+</body>
+</html>
+
