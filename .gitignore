@@ -1,4 +1,7 @@
 .DS_Store
+.agents/
+.cursor/
+.gemini/
 __pycache__/
 *.py[cod]
 .venv/
@@ -8,5 +11,8 @@ knowledge/
 07_Outreach/
 01_Source_Drafts/
 *.log
+*.blend1
+exports_printable/
+exports_mvp_printable/
 .env
 .env.*

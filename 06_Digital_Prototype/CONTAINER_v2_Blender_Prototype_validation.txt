@@ -1,0 +1,7 @@
+CONTAINER v2 Blender prototype validation: PASS
+Collections checked: 9
+Sensor markers found: 48
+Body envelope approx: 8.00 x 6.00 x 4.00 m
+Raised floor Z: 0.90 m
+Arm rail Z: 3.15 m
+Renders checked: 5
